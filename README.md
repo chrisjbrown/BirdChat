@@ -3,7 +3,7 @@
 ## built using create-react-app and semantic-ui-react
 
 ## Live Demo
-https://build-nhahogatko.now.sh/
+bird-chat-jmenkgpfdm.now.sh
 
 ## Run Development
 
