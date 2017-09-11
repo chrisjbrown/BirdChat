@@ -18,6 +18,10 @@ npm build
 
 ## Technologies
 
+I used basic css over scss and less mixins/classes
+Instead components have there own styles and are included when the component is rendered
+This forces a component approach and protects against css becoming bloated and misused
+
 [create-react-app](https://github.com/facebookincubator/create-react-app)
 for getting going with a webpack build and service-worker
 
