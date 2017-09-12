@@ -25,6 +25,8 @@ This forces a component approach and protects against css becoming bloated and m
 [create-react-app](https://github.com/facebookincubator/create-react-app)
 for getting going with a webpack build and service-worker
 
-[semantic-ui-react](https://react.semantic-ui.com/introduction) for components that have dependencies besides react and a small style sheet
+[semantic-ui-react](https://react.semantic-ui.com/introduction) for components that have few dependencies besides react and a small style sheet
 
 [basscss](http://basscss.com/) very small css package for general layouting
+
+This setup allows for few dependencies. The component library used allows for modular components that don't depend on each other. One could even mix and match components from other libraries bootstrap, materail-ui, etc easily without conflict. 
