@@ -13,6 +13,8 @@ import { subscribeToMessages, sendMessage } from './api';
 import Message from './components/message';
 import TextArea from './components/textarea';
 
+const phoneRegex = /^\d{10}$/;
+
 class App extends Component {
 
   constructor(props) {
@@ -34,6 +36,7 @@ class App extends Component {
       composer: '',
       recipientPhone: '',
       recipientPhoneConfirmed: false,
+      invalidPhone: false,
       messages: []
     };
   }
@@ -110,7 +113,9 @@ class App extends Component {
     /**
      * TODO: some validation of the phone while typing
      */
+    const invalidPhone = phoneRegex.test(event.currentTarget.value);
     this.setState({
+      invalidPhone: !invalidPhone,
       recipientPhone: event.currentTarget.value
     });
   }
@@ -123,20 +128,28 @@ class App extends Component {
     /**
      * TODO: some validation of the phone before confirming
      */
+    if (this.state.invalidPhone) {
+      return;
+    }
+
     this.setState({
       recipientPhoneConfirmed: true
     });
   }
 
   renderRecipientForm() {
-    const {recipientPhone} = this.state;
+    const {recipientPhone, invalidPhone} = this.state;
     return (
       <form onSubmit={this.confirmRecipientPhone}>
         <div className="m2">
           <h2>To get started enter a phone number to send SMS too</h2>
         </div>
         <div className="m2">
+          <h5>
+            Enter a 10 digit dutch number starting with country code
+          </h5>
           <Input
+            error={invalidPhone}
             value={recipientPhone}
             placeholder="Enter a phone number"
             onChange={this.updateRecipientPhone}
