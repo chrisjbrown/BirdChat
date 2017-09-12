@@ -3,7 +3,7 @@
 ## built using create-react-app and semantic-ui-react
 
 ## Live Demo
-bird-chat-jmenkgpfdm.now.sh
+https://bird-chat-tmpcrarlis.now.sh
 
 ## Run Development
 
